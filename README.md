@@ -1,7 +1,7 @@
 # Is There Water?
 ### Tanzania
 <div>
-<P ALIGN=CENTER><img src="images/water.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
+<P ALIGN=CENTER><img src="images/watertap.jpg" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
 * DrivenData competition
 * Tanzania
