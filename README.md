@@ -19,5 +19,5 @@
 
 ## **Exploratory data analysis (EDA) & Feature Engineering**
 
-[**Pandas dataframe profile**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/images/pfr_cleaned.html) 
+[**Pandas dataframe profile**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html) 
 
