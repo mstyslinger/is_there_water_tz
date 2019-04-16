@@ -26,7 +26,7 @@
   <!-- the above p cannot start right at the beginning of the line and is mandatory for everything else to work -->
   ## Pandas dataframe profile
 <div>
-<P ALIGN=CENTER><img src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
+<P ALIGN=CENTER><img src="images/pfr_cleaned.html" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
 
   <html lang="en">
   <head>
