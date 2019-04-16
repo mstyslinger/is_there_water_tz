@@ -13,6 +13,10 @@
 * Is there a machine learning model that can identify with reasonable certainty which water points are likely to need maintenance or replacement?
 
 ### The dataset:
+<p>
+<img align="right" src="images/raw_msno_matrix.png" width="500">
+</p>
+
 * CSV
 * Include PandasProfiling output
 
