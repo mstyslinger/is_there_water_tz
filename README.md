@@ -19,10 +19,5 @@
 
 ## **Exploratory data analysis (EDA) & Feature Engineering**
 
-<details>
-  <summary>Dataset deepdive</summary>
-  <p>
-    
-  <!-- the above p cannot start right at the beginning of the line and is mandatory for everything else to work -->
-  ## Pandas dataframe profile
-http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/images/pfr_cleaned.html
+[**Pandas dataframe profile**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/images/pfr_cleaned.html) 
+
