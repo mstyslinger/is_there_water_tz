@@ -25,6 +25,7 @@
     
 <!-- the above p cannot start right at the beginning of the line and is mandatory for everything else to work -->
 ## Pandas dataframe profile
+```render
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -4886,3 +4887,4 @@
 </body>
 </html>
 </p></details>
+```
