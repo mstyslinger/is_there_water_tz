@@ -27,10 +27,10 @@
   ## Pandas dataframe profile
 <div>
 <P ALIGN=CENTER><img src="images/pfr_cleaned.html" style="display: block; margin-left: auto; margin-right: auto;"  width="900"/></P></div>
-
-<div>
-  <html lang="en">
-  <head>
+```html
+<!doctype html>
+<html lang="en">
+<head>
   <meta charset="utf-8">
 
   <title>Profile report</title>
@@ -4891,4 +4891,4 @@
 </html>
 </P></div>
 </p></details>
-
+```
