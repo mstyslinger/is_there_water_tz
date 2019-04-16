@@ -16,5 +16,15 @@
 * CSV
 * Include PandasProfiling output
 
+
 ## **Exploratory data analysis (EDA) & Feature Engineering**
+
+<details>
+  <summary>Dataset deepdive</summary>
+  <p>
+<!-- the above p cannot start right at the beginning of the line and is mandatory for everything else to work -->
+## Pandas dataframe profile [a](link)
+```java
+code block
+```
 
