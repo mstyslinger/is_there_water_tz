@@ -14,7 +14,7 @@
 
 ### The dataset:
 <p>
-<img align="right" src="images/raw_msno_matrix.png" width="500">
+<img align="right" src="images/raw_msno_matrix.png" width="700">
 </p>
 
 * CSV
