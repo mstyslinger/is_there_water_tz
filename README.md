@@ -16,7 +16,7 @@ In rural and underprivileged areas, improved water points are funded and install
 <img align="center" src="images/water_map.png" width="800">
 </p>
 
-[**Interactive map**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/water_map.html)
+[**Interactive map**](https://sites.google.com/view/is-there-water/home)
 
 ## The dataset
 * The raw CSV dataset, provided by the online competition, has 59,400 rows (each representing a water point in Tanzania) and 40 columns of descriptive features, which include information on various levels of geographical location, population using the water point, water point management and payment schemes, type and age of the hardware, water pressure at the tap, and type of water source.
