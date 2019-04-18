@@ -19,10 +19,11 @@ In rural and underprivileged areas, improved water points are funded and install
 <img align="center" src="images/raw_msno_mtx.png" width="800">
 </p>
 
-## **Exploratory data analysis (EDA), feature Engineering, and feature selection:**
+## **Exploratory data analysis (EDA), feature Eengineering, and feature selection:**
 
 * 'population' was converted to categorical data. 48% are 0s and 1s (probably inaccurate) and assigned value of 'unknown'. The rest of the data was divided into 1st, 2nd, and 3rd quartiles
 * 70% of 'amount_tsh' are zeros - could be error or could mean water has to be pumped manually. 470 entries are between 5,000 - 350,000. Sort of uninterrpretable values
+* 'amount_tsh' converted to categorical ranges
 * 'permit' has 3,056 NaNs, which are converted to False, meaning no permit
 * 'public_meeting' has 3,334 NaNs, which are converted to False, meaning no permit
 * 'waterpoint_age' is a calculated feature with a handful of negatives and some with an age the same as the year recorded. Imputed with 0 and median, respectively
@@ -41,5 +42,6 @@ In rural and underprivileged areas, improved water points are funded and install
 * df_hist['amount_tsh'].hist()
 
 ### Deep dive dataset details:
-[**Pandas dataframe profile: raw dataset**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html) 
+[**Pandas dataframe profile: raw dataset**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html)
+
 [**Pandas dataframe profile: dataset featurized for analysis**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html) 
