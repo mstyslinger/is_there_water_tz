@@ -12,13 +12,12 @@
 * Is there a machine learning model that can identify with reasonable certainty which water points are likely to need maintenance or replacement?
 
 ### The dataset:
-<p>
-<img align="right" src="images/raw_msno_mtx.png" width="700">
-</p>
-
 * The raw CSV dataset, provided by the online competition, has 59,400 rows (each representing a water point in Tanzania) and 40 columns of descriptive features, which include information on various levels of geographical location, population using the water point, water point management and payment schemes, type and age of the hardware, water pressure at the tap, and type of water source.
 * The target (to be predicted) is a categorical column with three classes: 'functional,' 'functional needs repair,' and 'non functional.'
-
+* The following represents the first 5,000 rows of the dataset, with the white lnies indicating missing data:
+<p>
+<img align="center" src="images/raw_msno_mtx.png" width="800">
+</p>
 
 ## **Exploratory data analysis (EDA) & Feature Engineering**
 
