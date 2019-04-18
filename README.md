@@ -15,6 +15,7 @@ In rural and underprivileged areas, improved water points are funded and install
 <p>
 <img align="center" src="images/water_map.png" width="800">
 </p>
+
 [**Interactive map**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html)
 
 ## The dataset
