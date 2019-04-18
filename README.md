@@ -7,11 +7,11 @@ A social impact driven tech firm hosts open competitions to crowdsource data sci
 Tanzania has achieved has averaged 6.5% economic growth over the past decade and is on its way to becoming a middle income country. But inequalities are entrenched, and the country has seen only a modest reduction in poverty over the same period. Some 40% of the country's population are able to rely on regular access to safe drinking water sources.
 In rural and underprivileged areas, improved water points are funded and installed by a wide array of actors - including the local government, civil society, international donors, private companies, and individuals - using a variety of technologies and water sourcing methods. Understanding when or how a water point might break or need maintenance could inform budget allocations and maintenance scheduling, ultimately optimizing access to safe water with those resources.
 
-## The analysis questions:
+## The analysis questions
 * What are the key predictors of whether or not a water point is functioning on any given day?
 * Is there a machine learning model that can identify with reasonable certainty which water points are likely to need maintenance or replacement?
 
-## The dataset:
+## The dataset
 * The raw CSV dataset, provided by the online competition, has 59,400 rows (each representing a water point in Tanzania) and 40 columns of descriptive features, which include information on various levels of geographical location, population using the water point, water point management and payment schemes, type and age of the hardware, water pressure at the tap, and type of water source.
 * The target (to be predicted) is a categorical column with three classes: 'functional,' 'functional needs repair,' and 'non functional.'
 * The following represents the first 5,000 rows of the dataset, with the white lines indicating missing data:
@@ -19,7 +19,7 @@ In rural and underprivileged areas, improved water points are funded and install
 <img align="center" src="images/raw_msno_mtx.png" width="800">
 </p>
 
-## **Exploratory data analysis (EDA), feature Eengineering, and feature selection:**
+## **Exploratory data analysis (EDA), feature Eengineering, and feature selection**
 
 * 'population' was converted to categorical data. 48% are 0s and 1s (probably inaccurate) and assigned value of 'unknown'. The rest of the data was divided into 1st, 2nd, and 3rd quartiles
 * 70% of 'amount_tsh' are zeros - could be error or could mean water has to be pumped manually. 470 entries are between 5,000 - 350,000. Sort of uninterrpretable values
@@ -41,7 +41,27 @@ In rural and underprivileged areas, improved water points are funded and install
 * df_hist = df_hist[df_hist['amount_tsh'] < 1000]
 * df_hist['amount_tsh'].hist()
 
-### Deep dive dataset details:
-[**Pandas dataframe profile: raw dataset**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html)
+### Dataset deep dive details:
+* [**Pandas dataframe profile: raw dataset**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html)
 
-[**Pandas dataframe profile: dataset featurized for analysis**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html) 
+* [**Pandas dataframe profile: dataset featurized for analysis**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html) 
+
+## Model fitting
+Data were analyzed using:
+* Random Forest Classifier
+* Logistic Regression
+* Naive Bayes?
+
+### Random forest results:
+* Precision
+* Confusion matrix
+* Feature importances
+
+### Logistic regression results:
+* Precision
+* Adjusted R^2
+* Coefficients
+
+## Future work
+* H2O Distributed Random Forest
+* Flask app
