@@ -35,6 +35,7 @@ In rural and underprivileged areas, improved water points are funded and install
 * 20,034 records have 0s for BOTH 'construction_year' AND 'population'
 * 'amount_tsh' is the amount of static pressure in the pipe
 * 41,639 records have 0 as the 'amount_tsh' value
+* 'installer' has 2,145 unique values (installation entity names), including likely mispellings and low frequency values (occurring once or just a few times).
 * df_mask = df[df['construction_year'] == df['population']]
 * df_mask['construction_year'].value_counts()
 * df_hist = df[df['amount_tsh'] > 5]
