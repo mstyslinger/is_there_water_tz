@@ -49,6 +49,20 @@ In rural and underprivileged areas, improved water points are funded and install
 * df_hist = df_hist[df_hist['amount_tsh'] < 1000]
 * df_hist['amount_tsh'].hist()
 
+**Base cases for one-hot encoding of categorical features:**
+* 'amount_tsh': amount_tsh_zero_tsh
+* 'basin': base case is basin_Lake Victoria
+* 'district_code': district_code_district 1
+* 'extraction_type_class': extraction_type_class_gravity
+* 'management_group': management_group_user-group
+* 'payment': payment_never pay
+* 'population': population_unknown
+* 'region': region_Dar es Salaam
+* 'quantity': quantity_enough
+* 'source_class': source_class_groundwater
+* 'waterpoint_type_group': waterpoint_type_group_communal standpipe
+* 'waterpoint_age': waterpoint_age_26_years
+
 ### Dataset deep dive details:
 * [**Pandas dataframe profile: raw dataset**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html)
 
