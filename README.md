@@ -84,6 +84,10 @@ Data were analyzed using:
 * Adjusted R^2
 * Coefficients
 
+### Results
+* Recall or Sensitivity or TPR (True Positive Rate): Number of items correctly identified as positive out of total true positives- TP/(TP+FN) - punishes for false negative
+
+
 ## Future work
 * H2O Distributed Random Forest
 * Flask app
