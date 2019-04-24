@@ -103,6 +103,8 @@ In rural and underprivileged areas, improved water points are funded and install
 * Uses Bayes Theorem and assumes predictors are independent.
 * Model used: Bernoulli Naïve Bayes
 
+ <br />
+ 
 ### Results
 
 <div>
@@ -130,6 +132,7 @@ In rural and underprivileged areas, improved water points are funded and install
 <img align="center" src="images/feature_importances.png" width="700">
 </p>
 </div>
+ <br />
 
 * **Confusion matrix** produced from the random forest predictions on the "test" set with all features:
 
