@@ -53,9 +53,11 @@ In rural and underprivileged areas, improved water points are funded and install
   * 'waterpoint_age': 26-year old waterpoint
 * The following shows the dsitribution of functional, in need of repair, and broken water points over time in the dataset:
 
+<div>
 <p>
-<img align="center" src="images/waterpoint_trends.png" width="700">
+<img align="center" src="images/waterpoint_trends.png" width="600">
 </p>
+</div>
 
 * The target to be predicted includes imbalanced classes, with ‘needs repair’ only representing 7% of all water points.
 * The training data were upsampled using the Synthetic Minority Oversampling Technique (SMOTE) method to address the imbalance.
@@ -69,9 +71,11 @@ In rural and underprivileged areas, improved water points are funded and install
 
 ### Random forest:
 
+<div>
 <p>
-<img align="center" src="images/random_forest2.png" width="800">
+<img align="center" src="images/random_forest2.png" width="500">
 </p>
+</div>
 
 * An ensemble learning method that uses the predictions of a multitude of decision trees to get an averaged classification prediction.
 * The model was pptimized at 50 estimators (Random Forest hyperparameter setting).
@@ -79,48 +83,60 @@ In rural and underprivileged areas, improved water points are funded and install
 
 ### Logistic regression:
 
+<div>
 <p>
-<img align="center" src="images/log_reg.png" width="800">
+<img align="center" src="images/log_reg.png" width="500">
 </p>
+</div>
 
 * Uses probability estimates to predict the classification outcomes.
 * Parameters set for multinomial classification.
 
 ### Naive Bayes:
 
+<div>
 <p>
-<img align="center" src="images/naive_bayes.png" width="800">
+<img align="center" src="images/naive_bayes.png" width="500">
 </p>
+</div>
 
 * Uses Bayes Theorem and assumes predictors are independent.
 * Model used: Bernoulli Naïve Bayes
 
 ### Results
 
+<div>
 <p>
 <img align="center" src="images/table.png" width="700">
 </p>
+</div>
 
 * Random Forest performed best on all metrics.
 * It is most important that the model does not misclassify a broken water point as not broken (false negative), and Random Forest has the best recall score for the broken class.
 
+<div>
 <p>
 <img align="left" src="images/recall.png" width="500">
 </p>
+</div>
 
 * Recall or Sensitivity or TPR (True Positive Rate): Number of items correctly identified as positive out of total true positives- TP/(TP+FN) - punishes for false negative
 * The most important feature for the predictive power of the model is “the water point is dry.”
 * The model was run with only the top 20 features – performance dropped 10%.
 
+<div>
 <p>
 <img align="left" src="images/feature_importances.png" width="700">
 </p>
+</div>
 
 **Confucion matrix** produced from the random forest predictions on the "test" set with all features:
 
+<div>
 <p>
 <img align="left" src="images/confusion_matrix.png" width="700">
 </p>
+</div>
 
 * The model is weakest at predicting water points in need of repair and best at predicting water points that are functioning.
 * Despite upsampling and setting the random forest hyperparameter to use balanced class weights, the relative strength of predictions for each class reflects the class imbalance in the original dataset.
