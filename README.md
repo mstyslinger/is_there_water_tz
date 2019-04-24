@@ -85,7 +85,7 @@ In rural and underprivileged areas, improved water points are funded and install
 
 <div>
 <p>
-<img align="center" src="images/log_reg.png" width="500">
+<img align="center" src="images/log_reg2.png" width="550">
 </p>
 </div>
 
@@ -148,4 +148,4 @@ In rural and underprivileged areas, improved water points are funded and install
 
 ## Future work
 * Iterating on feature elimination could lead to a more optimal set of features for analysis. The recursive feature elimination (RFE) method could be a powerful approach to trimming the features to include in the model to a set of only the most predictive.
-• Context research could help clarify some of the data, leading to stronger feature engineering and selection.
+* Context research could help clarify some of the data, leading to stronger feature engineering and selection.
