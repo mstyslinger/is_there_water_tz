@@ -85,7 +85,7 @@ In rural and underprivileged areas, improved water points are funded and install
 
 <div>
 <p>
-<img align="center" src="images/log_reg2.png" width="550">
+<img align="center" src="images/log_reg3.png" width="550">
 </p>
 </div>
 
