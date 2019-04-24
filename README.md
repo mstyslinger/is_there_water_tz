@@ -54,8 +54,11 @@ In rural and underprivileged areas, improved water points are funded and install
 * The following shows the dsitribution of functional, in need of repair, and broken water points over time in the dataset:
 
 <p>
-<img align="center" src="images/waterpoint_trends.png" width="800">
+<img align="center" src="images/waterpoint_trends.png" width="700">
 </p>
+
+* The target to be predicted includes imbalanced classes, with ‘needs repair’ only representing 7% of all water points.
+* The training data were upsampled using the Synthetic Minority Oversampling Technique (SMOTE) method to address the imbalance.
 
 ### Dataset deep dive details:
 * [**Pandas dataframe profile: raw dataset**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html)
@@ -63,23 +66,69 @@ In rural and underprivileged areas, improved water points are funded and install
 * [**Pandas dataframe profile: dataset featurized for analysis**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html) 
 
 ## Model fitting
-Data were analyzed using:
-* Random Forest Classifier
-* Logistic Regression
-* Naive Bayes?
 
-### Random forest results:
-* Precision
-* Confusion matrix
-* Feature importances
+### Random forest:
 
-### Logistic regression results:
-* Pr
+<p>
+<img align="center" src="images/random_forest2.png" width="800">
+</p>
+
+* An ensemble learning method that uses the predictions of a multitude of decision trees to get an averaged classification prediction.
+* The model was pptimized at 50 estimators (Random Forest hyperparameter setting).
+* Used balanced class weights (hyperparameter) to further mitigate the imbalanced classes.
+
+### Logistic regression:
+
+<p>
+<img align="center" src="images/log_reg.png" width="800">
+</p>
+
+* Uses probability estimates to predict the classification outcomes.
+* Parameters set for multinomial classification.
+
+### Naive Bayes:
+
+<p>
+<img align="center" src="images/naive_bayes.png" width="800">
+</p>
+
+* Uses Bayes Theorem and assumes predictors are independent.
+* Model used: Bernoulli Naïve Bayes
 
 ### Results
-* Recall or Sensitivity or TPR (True Positive Rate): Number of items correctly identified as positive out of total true positives- TP/(TP+FN) - punishes for false negative
 
+<p>
+<img align="center" src="images/table.png" width="700">
+</p>
+
+* Random Forest performed best on all metrics.
+* It is most important that the model does not misclassify a broken water point as not broken (false negative), and Random Forest has the best recall score for the broken class.
+
+<p>
+<img align="left" src="images/recall.png" width="500">
+</p>
+
+* Recall or Sensitivity or TPR (True Positive Rate): Number of items correctly identified as positive out of total true positives- TP/(TP+FN) - punishes for false negative
+* The most important feature for the predictive power of the model is “the water point is dry.”
+* The model was run with only the top 20 features – performance dropped 10%.
+
+<p>
+<img align="left" src="images/feature_importances.png" width="700">
+</p>
+
+**Confucion matrix** produced from the random forest predictions on the "test" set with all features:
+
+<p>
+<img align="left" src="images/confusion_matrix.png" width="700">
+</p>
+
+* The model is weakest at predicting water points in need of repair and best at predicting water points that are functioning.
+* Despite upsampling and setting the random forest hyperparameter to use balanced class weights, the relative strength of predictions for each class reflects the class imbalance in the original dataset.
+
+## Limitations
+* While top predictive features are identified, more analysis would be needed to determine strength and direction of influence of each of those features on classification.
+* Documentation on the dataset is limited, and more clarity on context and meaning of some features could improve the analytical approach.
 
 ## Future work
-* H2O Distributed Random Forest
-* Flask app
+* Iterating on feature elimination could lead to a more optimal set of features for analysis. The recursive feature elimination (RFE) method could be a powerful approach to trimming the features to include in the model to a set of only the most predictive.
+• Context research could help clarify some of the data, leading to stronger feature engineering and selection.
