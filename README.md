@@ -116,7 +116,7 @@ In rural and underprivileged areas, improved water points are funded and install
 
 <div>
 <p>
-<img align="left" src="images/recall.png" width="500">
+<img align="center" src="images/recall.png" width="500">
 </p>
  <br />
 </div>
