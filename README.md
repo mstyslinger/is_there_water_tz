@@ -118,7 +118,7 @@ In rural and underprivileged areas, improved water points are funded and install
 <p>
 <img align="left" src="images/recall.png" width="500">
 </p>
-<br />
+ <br />
 </div>
 
 
@@ -128,16 +128,16 @@ In rural and underprivileged areas, improved water points are funded and install
 
 <div>
 <p>
-<img align="left" src="images/feature_importances.png" width="700">
+<img align="center" src="images/feature_importances.png" width="700">
 </p>
-<br />
+ <br />
 </div>
 
 **Confucion matrix** produced from the random forest predictions on the "test" set with all features:
 
 <div>
 <p>
-<img align="left" src="images/confusion_matrix.png" width="700">
+<img align="center" src="images/confusion_matrix.png" width="700">
 </p>
 </div>
 <br />
