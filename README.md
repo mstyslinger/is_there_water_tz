@@ -28,40 +28,34 @@ In rural and underprivileged areas, improved water points are funded and install
 
 ## **Exploratory data analysis (EDA), feature engineering, and feature selection**
 
-* 'population' was converted to categorical data. 48% are 0s and 1s (probably inaccurate) and assigned value of 'unknown'. The rest of the data was divided into 1st, 2nd, and 3rd quartiles
-* 70% of 'amount_tsh' are zeros - could be error or could mean water has to be pumped manually. 470 entries are between 5,000 - 350,000. Sort of uninterrpretable values
-* 'amount_tsh' converted to categorical ranges
-* 'permit' has 3,056 NaNs, which are converted to False, meaning no permit
-* 'public_meeting' has 3,334 NaNs, which are converted to False, meaning no permit
-* 'waterpoint_age' is a calculated feature with a handful of negatives and some with an age the same as the year recorded. Imputed with 0 and median, respectively
-* 'funder' has 3635 NaNs and 777 “0”s. Many names have very low frequency (like 1)
-* 'num_private' has 58,643 0s, and no explanation in the DrivenData description of what it means. Column dropped.
-* 'population' has 21,381 0s.
-* 20,709 records have an entry of '0' for 'construction_year'
-* Spread of construction_year (of non-zeros): max=2013, min=1960, mean=1997
-* 20,034 records have 0s for BOTH 'construction_year' AND 'population'
-* 'amount_tsh' is the amount of static pressure in the pipe
-* 41,639 records have 0 as the 'amount_tsh' value
-* 'installer' has 2,145 unique values (installation entity names), including likely mispellings and low frequency values (occurring once or just a few times).
-* df_mask = df[df['construction_year'] == df['population']]
-* df_mask['construction_year'].value_counts()
-* df_hist = df[df['amount_tsh'] > 5]
-* df_hist = df_hist[df_hist['amount_tsh'] < 1000]
-* df_hist['amount_tsh'].hist()
+* Some features were eliminated due to missing values or redundance in the dataset. Others were transformed for clarity in analysis. All continuous numerical features were ultimately converted into categorical ranges.
+* Details on feature engineering:
+  * 'population' was converted to categorical data. 48% are of the original dataset had 0s and 1s (probably inaccurate) for population, and so the value of 'unknown' was assigned to those. The rest of the data was divided into 1st, 2nd, or 3rd population quartile categories.
+  * 'amount_tsh' is a measure of water pressure available at the tap. 70% in the dataset are zeros for this feature. That could be error, or it could mean water has to be pumped manually. 470 entries are between 5,000 - 350,000, and without more contextual information, those values are somewhat uninterrpretable. The feature was converted into categorical ranges.
+  * The 'permit' feature has 3,056 missing values in the dataset, which were converted to 'False', meaning the water point is not permited.
+  * The 'public_meeting' feature has over 3,000 missing values, which were converted to 'False', meaning no public meeting. It is not clear from the dataset what public meeting refers to, but it could mean public participation in either the original selection of location of the water point or in some aspect of managing the water point.
+  * 'waterpoint_age' is an engineered feature that subtracts the value for the year the water point was installed from the year the data was collected on it. After the calculation, there were a handful of negative age values and some with an age the same as the year recorded. Those were imputed with '0' and the median age (26 years), respectively.
+  * The feature 'funder' has a lot of missing and '0' values. There are hundreds of different funder names, and many have very low frequency (like 1) in the dataset. The feature was dropped before analysis.
+  * Similarly, the feature 'installer' has over 2,000 unique values (installation entity names), including likely mispellings and low frequency values (occurring once or just a few times). The feature was dropped before analysis.
+  * The feature 'num_private' has almost entirely '0' values, and there's no explanation with the dataset in the description of what it means. The column was dropped from analysis.
+* All features were 'dummied,' assigning a 1 or 0 to each value that occurs under each feature. **Base cases for one-hot encoding of the categorical features are:**
+  * 'amount_tsh': zero total static head (TSH) - amount of water pressure at the tap
+  * 'basin': The Lake Victoria basin
+  * 'district_code': District 1
+  * 'extraction_type_class': Gravity as an extraction type
+  * 'management_group': Water point managed by a user group
+  * 'payment': Never pay - free
+  * 'population': Unknown population
+  * 'region': Dar es Salaam region
+  * 'quantity': Enough
+  * 'source_class': Groundwater
+  * 'waterpoint_type_group': Communal standpipe
+  * 'waterpoint_age': 26-year old waterpoint
+* The following shows the dsitribution of functional, in need of repair, and broken water points over time in the dataset:
 
-**Base cases for one-hot encoding of categorical features:**
-* 'amount_tsh': amount_tsh_zero_tsh
-* 'basin': base case is basin_Lake Victoria
-* 'district_code': district_code_district 1
-* 'extraction_type_class': extraction_type_class_gravity
-* 'management_group': management_group_user-group
-* 'payment': payment_never pay
-* 'population': population_unknown
-* 'region': region_Dar es Salaam
-* 'quantity': quantity_enough
-* 'source_class': source_class_groundwater
-* 'waterpoint_type_group': waterpoint_type_group_communal standpipe
-* 'waterpoint_age': waterpoint_age_26_years
+<p>
+<img align="center" src="images/waterpoint_trends.png" width="800">
+</p>
 
 ### Dataset deep dive details:
 * [**Pandas dataframe profile: raw dataset**](http://htmlpreview.github.io/?https://github.com/mstyslinger/is_there_water_tz/blob/master/pandas_profile_reports/pfr_cleaned.html)
@@ -80,9 +74,7 @@ Data were analyzed using:
 * Feature importances
 
 ### Logistic regression results:
-* Precision
-* Adjusted R^2
-* Coefficients
+* Pr
 
 ### Results
 * Recall or Sensitivity or TPR (True Positive Rate): Number of items correctly identified as positive out of total true positives- TP/(TP+FN) - punishes for false negative
