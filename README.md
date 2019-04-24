@@ -107,7 +107,7 @@ In rural and underprivileged areas, improved water points are funded and install
 
 <div>
 <p>
-<img align="center" src="images/table.png" width="700">
+<img align="center" src="images/table2.png" width="700">
 </p>
 </div>
 
@@ -118,7 +118,6 @@ In rural and underprivileged areas, improved water points are funded and install
 <p>
 <img align="center" src="images/recall.png" width="500">
 </p>
- <br />
 </div>
 
 
@@ -130,17 +129,15 @@ In rural and underprivileged areas, improved water points are funded and install
 <p>
 <img align="center" src="images/feature_importances.png" width="700">
 </p>
- <br />
 </div>
 
-**Confucion matrix** produced from the random forest predictions on the "test" set with all features:
+* **Confusion matrix** produced from the random forest predictions on the "test" set with all features:
 
 <div>
 <p>
 <img align="center" src="images/confusion_matrix.png" width="700">
 </p>
 </div>
-<br />
 
 * The model is weakest at predicting water points in need of repair and best at predicting water points that are functioning.
 * Despite upsampling and setting the random forest hyperparameter to use balanced class weights, the relative strength of predictions for each class reflects the class imbalance in the original dataset.
