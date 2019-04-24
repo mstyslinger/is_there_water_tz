@@ -119,6 +119,7 @@ In rural and underprivileged areas, improved water points are funded and install
 <img align="left" src="images/recall.png" width="500">
 </p>
 </div>
+<br />
 
 * Recall or Sensitivity or TPR (True Positive Rate): Number of items correctly identified as positive out of total true positives- TP/(TP+FN) - punishes for false negative
 * The most important feature for the predictive power of the model is “the water point is dry.”
@@ -129,6 +130,7 @@ In rural and underprivileged areas, improved water points are funded and install
 <img align="left" src="images/feature_importances.png" width="700">
 </p>
 </div>
+<br />
 
 **Confucion matrix** produced from the random forest predictions on the "test" set with all features:
 
@@ -137,6 +139,7 @@ In rural and underprivileged areas, improved water points are funded and install
 <img align="left" src="images/confusion_matrix.png" width="700">
 </p>
 </div>
+<br />
 
 * The model is weakest at predicting water points in need of repair and best at predicting water points that are functioning.
 * Despite upsampling and setting the random forest hyperparameter to use balanced class weights, the relative strength of predictions for each class reflects the class imbalance in the original dataset.
